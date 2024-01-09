@@ -9,13 +9,13 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -36,8 +36,6 @@ ul,
 ol {
   list-style: none;
 }
-.page {
-}
 
 .content {
   display: grid;
@@ -46,6 +44,64 @@ ol {
   column-gap: 30px;
   margin: 138px auto;
 }
+
+/* Кнопки и общие вспомогательные правила, начало*/
+.button {
+  position: relative;
+  border: 2px solid #fff;
+  padding: 5px 60px;
+  color: #fff;
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  background-color: transparent;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  margin-top: 13px;
+  padding: 5px 72px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__submit-button:hover::before {
+  content: "Найти";
+  position: absolute;
+  border-bottom: 1px solid #fff;
+}
+
+.more-button:hover::before {
+  content: "Показать ещё";
+  position: absolute;
+  border-bottom: 1px solid #fff;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Кнопки и общие вспомогательные правила, конец*/
 
 /* НАЧАЛО СЕКЦИИ RESULT */
 .result__video-container {
@@ -66,40 +122,38 @@ ol {
 }
 
 .search-form__fieldset-title {
+  margin-bottom: 7px;
   color: #fff;
   font-family: Fira Sans Condensed;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
-  margin-bottom: 7px;
 }
-
-
 
 .search-form__textfield {
   position: relative;
-  background-color: transparent;
   width: 225px;
   height: 27px;
   border: none;
-  border-top:1px solid #fff ;
-  border-bottom:1px solid #fff ;
+  border-top: 1px solid #fff;
   border-right: none;
+  border-bottom: 1px solid #fff;
   color: #fff;
   font-family: Fira Sans Condensed;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
+  background-color: transparent;
 }
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.7);
   font-family: Fira Sans Condensed;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
 }
 
@@ -108,8 +162,8 @@ ol {
 }
 
 .search-form__textfield:focus {
-outline: 1px solod #fff;
-outline-offset: 1px;
+  outline: 1px solod #fff;
+  outline-offset: 1px;
 }
 
 .search-form__fieldset {
@@ -124,14 +178,10 @@ outline-offset: 1px;
   display: inline-block;
   width: 15px;
   height: 15px;
+  margin-top: 10x;
   outline: 1px solid #fff;
   outline-offset: 1px;
-  margin-top: 10x;
 }
-
-
-
-
 
 input[type="checkbox"]:checked + span {
   background-color: aliceblue;
@@ -139,8 +189,6 @@ input[type="checkbox"]:checked + span {
 
 input[type="checkbox"] + span:hover {
   cursor: pointer;
-
-
 }
 .search-form__label-text:hover {
   border-bottom: 1px solid #fff;
@@ -148,67 +196,9 @@ input[type="checkbox"] + span:hover {
 }
 
 .search-form__label:has(:focus-visible) {
-outline: 1px solid #fff;
-outline-offset: 1px;
-
-}
- 
-/* Кнопки начало */
-.button {
-  position: relative;
-  padding: 5px 60px;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  text-align: center;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.search-form__submit-button {
-  align-self: flex-end;
-  margin-top: 13px;
-  padding: 5px 72px;
-}
-
-.button:active {
-  background-color: #545050;
-}
-
-.button:hover {
-  cursor: pointer;
-}
-
-.button:focus {
   outline: 1px solid #fff;
-  outline-offset: 2px;
-} 
-
-.search-form__submit-button:hover::before {
-  content: "Найти";
-  border-bottom: 1px solid #fff;
-  position: absolute;
+  outline-offset: 1px;
 }
-
-.more-button:hover::before {
-  content: "Показать ещё";
-  border-bottom: 1px solid #fff;
-  position: absolute;
-}
-
-.visually-hidden {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 
 /* НАЧАЛО СЕКЦИИ CONTENT_DETAILS  */
 
@@ -217,24 +207,26 @@ outline-offset: 1px;
   display: flex;
   flex-direction: column;
   row-gap: 26px;
+  width: 100%;
   block-size: 100%;
 }
 
 .title {
   color: #fff;
   font-family: Oswald, Cambria, Cochin;
+  font-weight: 700;
   font-size: 75px;
   font-style: normal;
-  font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
 }
 
 .content__list {
-  max-height: 303px;
+  width: 100%;
+  height: 303px;
+  padding-bottom: 5px;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-bottom: 5px;
 }
 
 .content__list::-webkit-scrollbar {
@@ -246,65 +238,72 @@ outline-offset: 1px;
 .content__accent {
   color: #545050;
   font-family: Oswald;
+  font-weight: 700;
   font-size: 75px;
   font-style: normal;
-  font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
- 
 }
 
 .content__video-card {
   display: grid;
-  grid-template-columns: 200px 200px;
-  grid-template-rows: ;
+  grid-template-columns: 200px 190px;
   grid-column-gap: 5px;
 }
 
 .content__card-link {
+  display: block;
+  margin: 2px;
   text-decoration: none;
 }
 .content__video-card-title {
   color: #fff;
   font-family: Oswald;
+  font-weight: 700;
   font-size: 30px;
   font-style: normal;
-  font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .content__video-card-description {
   color: #fff;
   font-family: Fira Sans Condensed;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
   line-height: 30px;
 }
 
 .content__video-card-thumbnail {
-  max-height: 103px;
   width: 100%;
+  max-height: 103px;
 }
+
 .content__list-item:not(:last-child) {
   padding-bottom: 30px;
 }
 
 .more-button {
   padding: 5px 140px;
-  margin-left: 5px;
-
 }
-
 
 .content__video-card:active {
   background-color: #545050;
 }
 
-.content__video-card:has(.content__video-card-title,.content__video-card-description):hover {
-  text-decoration: underline;
+.content__video-card:has(
+    .content__video-card-title,
+    .content__video-card-description
+  ):hover {
   color: #fff;
+  text-decoration: underline;
 }
-
-
