@@ -9,9 +9,10 @@ html {
 }
 
 .page {
-  display: flex;
-  justify-content: center;
-  margin: initial;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -43,7 +44,8 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   column-gap: 30px;
-  margin: 138px auto;
+  margin-top: 53px;
+  margin-right: 16px;
 }
 
 /* Кнопки и общие вспомогательные правила, начало*/
@@ -87,12 +89,16 @@ ol {
 .search-form__submit-button:hover::before {
   content: "Найти";
   position: absolute;
+  top: 15%;
+  left: 38%;
   text-decoration: underline;
 }
 
 .more-button:hover::before {
   content: "Показать ещё";
   position: absolute;
+  top: 15%;
+  left: 36%;
   text-decoration: underline;
 }
 
@@ -118,7 +124,7 @@ ol {
 .result__video {
   width: 100%;
   height: 386px;
-  object-fit: initial;
+  object-fit: cover;
 }
 
 .search-form {
@@ -162,10 +168,6 @@ ol {
   line-height: normal;
 }
 
-.search-form__textfield:active {
-  border-radius: 0px;
-}
-
 .search-form__textfield:focus {
   outline: none;
 }
@@ -183,7 +185,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  width: 212px;
+  column-gap: 19px;
 }
 
 .search-form__pseudo-checkbox {
@@ -195,19 +197,20 @@ ol {
   outline-offset: 1px;
 }
 
+
+
 .search-form__checkbox[type="checkbox"]:checked + span {
   background-color: #fff;
 }
 
 .search-form__label {
   display: flex;
+  align-items: center;
+  justify-content: center;
   column-gap: 5px;
 }
 
-.search-form__label:focus {
-  outline: 1px solid #fff;
-}
-.search-form__label:hover {
+.search-form__checkbox-list .search-form__label:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -243,20 +246,20 @@ ol {
   height: 303px;
   padding-bottom: 5px;
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .content__list::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 .content__list::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 .content__list::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 0, 0); 
-  border-radius: 20px; 
+  border-radius: 20px;
+  background-color: #fff;
 }
 
 .content__accent {
@@ -265,8 +268,7 @@ ol {
 
 .content__video-card {
   display: grid;
-  grid-template-columns: 200px 194px;
-  grid-column-gap: 5px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .content__card-link {
@@ -275,6 +277,7 @@ ol {
   text-decoration: none;
 }
 .content__video-card-title {
+  overflow: hidden;
   color: #fff;
   font-family: Oswald, sans-serif;
   font-weight: 700;
@@ -283,8 +286,7 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  /* white-space: nowrap; */
 }
 
 .content__card-link:focus {
@@ -307,8 +309,8 @@ ol {
 .content__video-card-thumbnail {
   width: 100%;
   max-height: 103px;
-  object-fit: contain;
-  object-position: left;
+  object-fit:cover;
+  object-position: center;
 }
 
 .content__list-item:not(:last-child) {
@@ -319,7 +321,7 @@ ol {
   padding: 5px 140px;
 }
 
-.content__card-link:active {
+.content__card-link_current:active {
   background-color: #545050;
 }
 
