@@ -9,10 +9,10 @@ html {
 }
 
 .page {
- display: flex;
- justify-content: center;
- align-items: center;
- 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
@@ -44,8 +44,7 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   column-gap: 30px;
-  margin-top: 53px;
-  margin-right: 16px;
+  /* margin-right: 16px; */
 }
 
 /* Кнопки и общие вспомогательные правила, начало*/
@@ -118,7 +117,7 @@ ol {
 .result__video-container {
   position: relative;
   margin-bottom: 10px;
-  padding-top: 73px;
+  margin-top: 73px;
 }
 
 .result__video {
@@ -197,8 +196,6 @@ ol {
   outline-offset: 1px;
 }
 
-
-
 .search-form__checkbox[type="checkbox"]:checked + span {
   background-color: #fff;
 }
@@ -242,6 +239,7 @@ ol {
 }
 
 .content__list {
+  position: relative;
   width: 100%;
   height: 303px;
   padding-bottom: 5px;
@@ -286,7 +284,7 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  /* white-space: nowrap; */
+  white-space: nowrap;
 }
 
 .content__card-link:focus {
@@ -295,6 +293,10 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
+}
+
+.content__video-card-description-container {
+  max-width: 200px;
 }
 
 .content__video-card-description {
@@ -309,7 +311,7 @@ ol {
 .content__video-card-thumbnail {
   width: 100%;
   max-height: 103px;
-  object-fit:cover;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -321,9 +323,13 @@ ol {
   padding: 5px 140px;
 }
 
-.content__card-link_current:active {
-  background-color: #545050;
+.content__card-link:active {
+  background-color:#545050;
 }
+
+.content__card-link_current {
+  background-color: #545050;
+} 
 
 .content__card-link:has(
     .content__video-card-title,
